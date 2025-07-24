@@ -1,0 +1,16 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load the data
+data = pd.read_csv('titanic.csv')
+
+# Count the number of survived and not survived passengers
+survivors = data[data['Survived']==1]['Survived'].count()
+non_survivors = data[data['Survived']==0]['Survived'].count()
+
+# Create the bar plot
+plt.bar(['Survived', 'Died'], [survivors, non_survivors])
+plt.ylabel('Number of Passengers')
+plt.title('Number of Passengers who survived and died in Titanic')
+
+plt.show()
